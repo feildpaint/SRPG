@@ -1,5 +1,6 @@
 package com.ash.srpg;
 
+import com.ash.srpg.screens.MainMenu;
 import com.ash.srpg.screens.SplashScreen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,7 +14,8 @@ public class MagicalAcademy extends Game {
     }
 
     public void create() {
-        setScreen(new SplashScreen(this));
+//        setScreen(new SplashScreen(this));
+        setScreen(new MainMenu(this));
     }
 
     public void render() {

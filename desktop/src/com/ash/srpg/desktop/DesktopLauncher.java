@@ -10,8 +10,8 @@ public class DesktopLauncher {
 
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-        config.width = 800;
-        config.height = 600;
+        config.width = 1280;
+        config.height = 720;
         config.title = "Magical Academy v0.01 Pre-Alpha";
         config.resizable = false;
         new LwjglApplication(new MagicalAcademy(), config);

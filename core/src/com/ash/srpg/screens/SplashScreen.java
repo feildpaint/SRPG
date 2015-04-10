@@ -62,6 +62,7 @@ public class SplashScreen implements Screen {
 
     private void tweenCompleted() {
         Gdx.app.log("Magical Academy", "Tween Complete");
+        dispose();
         game.setScreen(new MainMenu(game));
     }
 
@@ -78,5 +79,7 @@ public class SplashScreen implements Screen {
     }
 
     public void dispose() {
+        batch.dispose();
+        splashTexture.dispose();
     }
 }

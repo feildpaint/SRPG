@@ -17,7 +17,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class MainMenu implements Screen {
     private MagicalAcademy game;
@@ -29,7 +28,6 @@ public class MainMenu implements Screen {
 
     private TextButton[] button = new TextButton[4];
 
-    private Texture titleMenu;
     private Sprite titleMenuSprite;
 
 
@@ -39,23 +37,25 @@ public class MainMenu implements Screen {
     }
 
     public void render(float delta) {
-        Gdx.gl.glClearColor((float) 185/255, (float) 145/255, (float) 69/255, 1);
+        Gdx.gl.glClearColor((float) 185 / 255, (float) 145 / 255, (float) 69 / 255, 1);
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
         stage.act(delta);
+
+        batch.begin();
+        titleMenuSprite.draw(batch);
+        batch.end();
 
         batch.begin();
         stage.draw();
         batch.end();
 
-        batch.begin();
-        titleMenuSprite.draw(batch);
-        batch.end();
+
     }
 
 
     public void show() {
         // set sprites
-        titleMenu = new Texture("title/titleName.png");
+        Texture titleMenu = new Texture("title/titleName.png");
         titleMenu.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         titleMenuSprite = new Sprite(titleMenu);
         titleMenuSprite.setX(Gdx.graphics.getWidth() / 2 - titleMenuSprite.getWidth() / 2);
@@ -125,6 +125,7 @@ public class MainMenu implements Screen {
 
             });
 
+        //FIXME add extras
         // button 2: extras
         button[1].addListener(new InputListener() {
             private boolean isChecked;
@@ -149,6 +150,7 @@ public class MainMenu implements Screen {
 
         });
 
+        //FIXME add options
         // button 3: options
         button[2].addListener(new InputListener() {
             private boolean isChecked;
@@ -158,7 +160,9 @@ public class MainMenu implements Screen {
             }
 
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-//                if (isChecked) game.setScreen(new GameScreen(game));
+                if (isChecked){
+
+                }
             }
 
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
@@ -200,8 +204,8 @@ public class MainMenu implements Screen {
 
 
         // add actors to stage
-        for (int i = 0; i < button.length; i++) {
-            stage.addActor(button[i]);
+        for (TextButton aButton : button) {
+            stage.addActor(aButton);
         }
 
 
