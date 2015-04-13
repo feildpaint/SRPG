@@ -20,15 +20,26 @@ public class CombatInputHandler implements InputProcessor{
     }
 
     public void move(){
+//        if ()
+
         camera = screen.getCamera();
         if (keyPressedUp)
-            camera.translate(0, -8);
+            camera.translate(0, -6);
         if (keyPressedDown)
-            camera.translate(0, 8);
+            camera.translate(0, 6);
         if (keyPressedLeft)
-            camera.translate(8, 0);
+            camera.translate(6, 0);
         if (keyPressedRight)
-            camera.translate(-8, 0);
+            camera.translate(-6, 0);
+
+        if (camera.position.y > (camera.viewportHeight / 2) + 16)
+            camera.position.y = (camera.viewportHeight / 2) + 16;
+        if (camera.position.y < -(camera.viewportHeight / 2) + 16)
+            camera.position.y = -(camera.viewportHeight / 2) + 16;
+        if (camera.position.x > camera.viewportWidth)
+            camera.position.x = camera.viewportWidth;
+        if (camera.position.x < 0)
+            camera.position.x = 0;
         screen.setCamera(camera);
 
     }

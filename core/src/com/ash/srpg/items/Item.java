@@ -1,6 +1,6 @@
 package com.ash.srpg.items;
 
-public abstract class Item {
+public class Item {
 
     private int id;
 
