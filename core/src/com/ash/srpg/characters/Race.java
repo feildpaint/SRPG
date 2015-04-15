@@ -3,9 +3,9 @@ package com.ash.srpg.characters;
 public enum Race {
 
     HUMAN(1, 0, 0, 0, 2, 0, 0),
-    ELF(0, 0, 0, 0, 0 , 0, 0),
-    HALFLING(0, 0, 0, 0, 0 , 0, 0),
-    DRAGONKIN(0, 0, 0, 0, 0 , 0, 0);
+    ELF(0, 2, -1, 2, 0 , 0, 0),
+    HALFLING(0, 0, 0, 0, 0 , 2, 1),
+    DRAGONKIN(1, 0, 3, -1, 0 , 0, 0);
 
 
     private int vitality = 0;
