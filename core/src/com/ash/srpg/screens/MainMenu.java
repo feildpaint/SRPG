@@ -2,6 +2,7 @@
 package com.ash.srpg.screens;
 
 import com.ash.srpg.MagicalAcademy;
+import com.ash.srpg.characters.CharacterType;
 import com.ash.srpg.characters.Race;
 import com.ash.srpg.characters.Unit;
 import com.badlogic.gdx.Gdx;
@@ -50,8 +51,6 @@ public class MainMenu implements Screen {
         batch.begin();
         stage.draw();
         batch.end();
-
-
     }
 
 
@@ -138,8 +137,16 @@ public class MainMenu implements Screen {
 
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 if (isChecked) {
-                    Unit unit = new Unit(Race.HUMAN);
+                    Unit unit = new Unit();
+                    CharacterType character = new CharacterType(Race.HUMAN);
+                    CharacterType character2 = new CharacterType(Race.ELF);
+                    CharacterType character3 = new CharacterType(Race.HALFLING);
+                    CharacterType character4 = new CharacterType(Race.DRAGONKIN);
                     System.out.println(unit.toString());
+                    System.out.println(character.toString());
+                    System.out.println(character2.toString());
+                    System.out.println(character3.toString());
+                    System.out.println(character4.toString());
                 }
             }
 

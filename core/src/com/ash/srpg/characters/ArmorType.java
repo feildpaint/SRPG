@@ -1,6 +1,6 @@
 package com.ash.srpg.characters;
 
-@SuppressWarnings({"unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public enum ArmorType {
 
     //<editor-fold desc="Types">

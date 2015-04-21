@@ -1,14 +1,19 @@
 package com.ash.srpg;
 
+import com.ash.srpg.characters.CharacterType;
 import com.ash.srpg.screens.MainMenu;
-import com.ash.srpg.screens.SplashScreen;
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+import java.util.ArrayList;
 
 public class MagicalAcademy extends Game {
     public static final String VERSION = "0.01 Pre-Alpha";
     public static final String LOG = "Magical Academy";
-    SpriteBatch batch;
+
+    public CharacterType mainCharacter;
+
+    public ArrayList<CharacterType> characters;
+
 
     public MagicalAcademy() {
     }

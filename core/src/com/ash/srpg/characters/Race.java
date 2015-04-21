@@ -2,10 +2,10 @@ package com.ash.srpg.characters;
 
 public enum Race {
 
-    HUMAN(1, 0, 0, 0, 2, 0, 0),
-    ELF(0, 2, -1, 2, 0 , 0, 0),
-    HALFLING(0, 0, 0, 0, 0 , 2, 1),
-    DRAGONKIN(1, 0, 3, -1, 0 , 0, 0);
+    HUMAN       ("Human",       1,  0,  0,  0,  2,   0,  0),
+    ELF         ("Elf",         0,  2, -1,  2,  0 ,  0,  0),
+    HALFLING    ("Halfling",    0,  0,  0,  0,  0 ,  2,  1),
+    DRAGONKIN   ("Dragonkin",   1,  0,  3, -1,  0 ,  0,  0);
 
 
     private int vitality = 0;
@@ -16,9 +16,12 @@ public enum Race {
     private int intellect = 0;
     private int luck = 0;
 
+    private String title;
+
     private int[] stats;
 
-    private Race(int vit, int agi, int str, int fin, int wil, int intl, int luk){
+    private Race(String title, int vit, int agi, int str, int fin, int wil, int intl, int luk){
+        this.title = title;
         vitality += vit;
         agility += agi;
         strength += str;
@@ -37,7 +40,41 @@ public enum Race {
         stats[6] = luck;
     }
 
+    //<editor-fold desc="Getters">
+    public int getVitality() {
+        return vitality;
+    }
+
+    public int getAgility() {
+        return agility;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getFinesse() {
+        return finesse;
+    }
+
+    public int getWillpower() {
+        return willpower;
+    }
+
+    public int getIntellect() {
+        return intellect;
+    }
+
+    public int getLuck() {
+        return luck;
+    }
+
     public int[] getStats() {
         return stats;
     }
+
+    public String getTitle() {
+        return title;
+    }
+    //</editor-fold>
 }

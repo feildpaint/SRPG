@@ -2,17 +2,16 @@ package com.ash.srpg.items;
 
 public class Item {
 
-    private int id;
+    protected int id;
 
-    private String name;
-    private String flavor;
+    protected String name;
+    protected String flavor;
 
-    private int stackSize = 0;
-    private int maxSize = 99;
+    protected int stackSize = 0;
+    protected int maxSize = 99;
 
-    private boolean sellable= false;
-    private int sellAmount;
-
+    protected boolean sellable= false;
+    protected int sellAmount;
 
     public Item(int id, String name, String flavor) {
         this.id = id;
