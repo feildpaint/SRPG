@@ -1,1 +1,36 @@
-1 2 3 4 5 6 7
+# ITEM ARMOR HEAD
+# FORMAT:
+# id: ID, MUST BE AN INTEGER
+# name: NAME, MUST BE A SINGLE STRING
+# lore: FLAVOR, CAN ME NAY LENGTH
+# type: ENUM TYPE OF ARMOR, MUST BE AN INTEGER
+# weight: WEIGHT, MUST BE AN INTEGER
+#
+#
+#
+# id:
+# name:
+# lore:
+# type:
+# weight:
+
+id: 0
+name: Hide Helmet
+lore: A simple hide helmet.
+type: 2
+weight: 20
+end
+
+id: 1
+name: Cloth Hood
+lore: A decorative cloth hood.
+type: 0
+weight: 10
+end
+
+id: 2
+name: Iron Helm
+lore: A sturdy iron helmet.
+type: 6
+weight: 30
+end

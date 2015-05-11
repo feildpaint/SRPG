@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class CharacterType extends Unit {
 
+    private static final int MAX_CLASSES = 3;
+
     private Race race;
 
     private ItemArmorHead armorHead;
@@ -14,12 +16,21 @@ public class CharacterType extends Unit {
     private ItemArmorHands armorHands;
     private ItemArmorFeet armorFeet;
 
+    private ItemWeapon currentWeapon;
+
     private ArrayList<Item> inventory;
+
+    private ArrayList<ClassType> classes;
 
     public CharacterType(Race race) {
         super();
         this.race = race;
+        inventory = new ArrayList<>();
+        classes = new ArrayList<>();
         computeRace();
+
+        setCurrentWeapon(new ItemWeapon(WeaponType.SHORTSWORD));
+        addClass(ClassType.WARRIOR);
 
         calculateSubstats();
     }
@@ -32,6 +43,21 @@ public class CharacterType extends Unit {
         willpower += race.getWillpower();
         intellect += race.getIntellect();
         luck += race.getLuck();
+    }
+
+    public void calculateClass(){
+        for (ClassType type : classes){
+
+        }
+    }
+
+    public void setCurrentWeapon(ItemWeapon weapon){
+        currentWeapon = weapon;
+    }
+
+    public void addClass(ClassType type){
+        if (!(classes.size() > MAX_CLASSES))
+            classes.add(type);
     }
 
     public String toString(){
@@ -69,5 +95,10 @@ public class CharacterType extends Unit {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
+
+    public ArrayList<ClassType> getClasses() {
+        return classes;
+    }
+
     //</editor-fold>
 }

@@ -1,6 +1,7 @@
 package com.ash.srpg;
 
 import com.ash.srpg.characters.CharacterType;
+import com.ash.srpg.items.ItemManger;
 import com.ash.srpg.screens.MainMenu;
 import com.badlogic.gdx.Game;
 
@@ -14,12 +15,15 @@ public class MagicalAcademy extends Game {
 
     public ArrayList<CharacterType> characters;
 
+    public ItemManger itemManger;
 
     public MagicalAcademy() {
+        itemManger = new ItemManger();
     }
 
     public void create() {
 //        setScreen(new SplashScreen(this));
+        itemManger.loadItems();
         setScreen(new MainMenu(this));
     }
 

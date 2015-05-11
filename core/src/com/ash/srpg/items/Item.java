@@ -19,6 +19,9 @@ public class Item {
         this.flavor = flavor;
     }
 
+    public Item() {
+    }
+
     // Sets the item as sellable
     public void setSellable(int sellAmount){
         sellable = true;
@@ -30,4 +33,63 @@ public class Item {
         this.maxSize = 1;
     }
 
+    //<editor-fold desc="Setters">
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
+
+    public void setStackSize(int stackSize) {
+        this.stackSize = stackSize;
+    }
+
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
+    }
+
+    public void setSellable(boolean sellable) {
+        this.sellable = sellable;
+    }
+
+    public void setSellAmount(int sellAmount) {
+        this.sellAmount = sellAmount;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Getters">
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public int getStackSize() {
+        return stackSize;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public boolean isSellable() {
+        return sellable;
+    }
+
+    public int getSellAmount() {
+        return sellAmount;
+    }
+    //</editor-fold>
 }

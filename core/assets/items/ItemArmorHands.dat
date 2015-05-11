@@ -1,0 +1,41 @@
+# HANDS
+# FORMAT: THE FOLLOWING MUST BE INCLUDED
+# id: ID, MUST BE AN INTEGER, EVERY ID MUST BE UNIQUE
+# name: NAME, MUST BE A SINGLE STRING
+# lore: FLAVOR, CAN ME NAY LENGTH
+# type: ENUM TYPE OF ARMOR, MUST BE AN INTEGER
+# weight: WEIGHT, MUST BE AN INTEGER
+#
+# THE FOLLOWING ARE OPTIONAL TAGS AND ADD TO ITEM STATS
+# slash: stab: blunt: pierce: bullet: magic: fire: ice:
+# wind: earth: lightning: divine: dark: poison: wound:
+# bleed: confusion: charm: enfeeble: burn: freeze:
+# paralysis: silence: blind: doom:
+
+id: 0
+name: No Item
+lore: There is no item here.
+type: 7
+weight: 0
+end
+
+id: 1
+name: Studded Gloves
+lore: A pair of studded leather gloves.
+type: 2
+weight: 10
+end
+
+id: 2
+name: Iron Scale Gauntlets
+lore: A pair of iron scalemail gauntlets.
+type: 5
+weight: 16
+end
+
+id: 3
+name: Bronze Hands?
+lore: Two bronze hand thingys.
+type: 6
+weight: 24
+end

@@ -2,9 +2,13 @@
 package com.ash.srpg.screens;
 
 import com.ash.srpg.MagicalAcademy;
+import com.ash.srpg.UI.UI;
 import com.ash.srpg.characters.CharacterType;
 import com.ash.srpg.characters.Race;
 import com.ash.srpg.characters.Unit;
+import com.ash.srpg.items.ItemArmorChest;
+import com.ash.srpg.items.ItemArmorHead;
+import com.ash.srpg.items.ItemManger;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
@@ -34,23 +38,9 @@ public class MainMenu implements Screen {
     private Sprite titleMenuSprite;
 
 
-
     public MainMenu(MagicalAcademy game) {
         this.game = game;
-    }
-
-    public void render(float delta) {
-        Gdx.gl.glClearColor((float) 185 / 255, (float) 145 / 255, (float) 69 / 255, 1);
-        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
-        stage.act(delta);
-
-        batch.begin();
-        titleMenuSprite.draw(batch);
-        batch.end();
-
-        batch.begin();
-        stage.draw();
-        batch.end();
+//        game.itemManger.loadItems();
     }
 
 
@@ -69,6 +59,20 @@ public class MainMenu implements Screen {
         font = new BitmapFont(Gdx.files.internal("font/font01.fnt"), false);
     }
 
+
+    public void render(float delta) {
+        Gdx.gl.glClearColor((float) 185 / 255, (float) 145 / 255, (float) 69 / 255, 1);
+        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
+        stage.act(delta);
+
+        batch.begin();
+        titleMenuSprite.draw(batch);
+        batch.end();
+
+        batch.begin();
+        stage.draw();
+        batch.end();
+    }
 
 
     public void resize(int width, int height) {
@@ -137,16 +141,18 @@ public class MainMenu implements Screen {
 
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 if (isChecked) {
-                    Unit unit = new Unit();
-                    CharacterType character = new CharacterType(Race.HUMAN);
-                    CharacterType character2 = new CharacterType(Race.ELF);
-                    CharacterType character3 = new CharacterType(Race.HALFLING);
-                    CharacterType character4 = new CharacterType(Race.DRAGONKIN);
-                    System.out.println(unit.toString());
-                    System.out.println(character.toString());
-                    System.out.println(character2.toString());
-                    System.out.println(character3.toString());
-                    System.out.println(character4.toString());
+//                    Unit unit = new Unit();
+//                    CharacterType character = new CharacterType(Race.HUMAN);
+//                    CharacterType character2 = new CharacterType(Race.ELF);
+//                    CharacterType character3 = new CharacterType(Race.HALFLING);
+//                    CharacterType character4 = new CharacterType(Race.DRAGONKIN);
+//                    System.out.println(unit.toString());
+//                    System.out.println(character.toString());
+//                    System.out.println(character2.toString());
+//                    System.out.println(character3.toString());
+//                    System.out.println(character4.toString());
+
+                    game.setScreen(new MapScreen(game));
                 }
             }
 
@@ -173,7 +179,13 @@ public class MainMenu implements Screen {
 
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 if (isChecked){
+//                    System.out.println(game.itemManger.toString());
+                    ItemArmorHead item = ItemManger.loadItemArmorHead(2);
+                    System.out.println(item.toString());
+                    ItemArmorChest item2 = ItemManger.loadItemArmorChest(1);
+                    System.out.println(item2.toString());
 
+                    game.setScreen(new UI());
                 }
             }
 

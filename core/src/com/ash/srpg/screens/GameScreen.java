@@ -9,7 +9,10 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.maps.tiled.*;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.*;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -71,6 +74,7 @@ public class GameScreen implements Screen {
         renderer.render();
 
         renderer.getBatch().setProjectionMatrix(cam.projection);
+
         renderer.getBatch().begin();
         stage.draw();
         renderer.getBatch().end();
@@ -91,7 +95,7 @@ public class GameScreen implements Screen {
         multi.addProcessor(processor);
         Gdx.input.setInputProcessor(multi);
 
-        // draw blue things
+        // create grid
         int dy = 0;
         int dx = 0;
         for (int i = 0; i < grid.length; i++) {
@@ -103,7 +107,7 @@ public class GameScreen implements Screen {
             dx = 0;
             dy += 16;
         }
-        showMove(2, 5, 5);
+        showMove(7, 5, 5);
 
     }
 
@@ -111,7 +115,7 @@ public class GameScreen implements Screen {
         int total = (((moveDistance * 2 + 1) * (moveDistance * 2 + 1)) / 2);
         System.out.println("Total: " + total);
         Button[] buttons = new Button[total];
-        MoveTile tile = new MoveTile();
+        MoveTile tile = new MoveTile(cam);
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = tile.getButton();
         }
@@ -261,13 +265,13 @@ public class GameScreen implements Screen {
 
     public void showMove(int moveDistance, int startRow, int startCol){
         int total = (((moveDistance * 2 + 1) * (moveDistance * 2 + 1)) / 2);
-        System.out.println(total);
+        System.out.println("Total tiles: " + total);
 
         int diameter = moveDistance * 2;
 
         // make vertical line
         for (int i = 0; i < diameter + 1; i++) {
-            Button button = new MoveTile().getButton();
+            Button button = new MoveTile(cam).getButton();
             if (i == diameter / 2){
                 button = null;
             }
@@ -283,7 +287,7 @@ public class GameScreen implements Screen {
 
         // make horizontal line
         for (int i = 0; i < diameter + 1; i++) {
-            Button button = new MoveTile().getButton();
+            Button button = new MoveTile(cam).getButton();
             if (i == diameter / 2){
                 button = null;
             }
@@ -300,10 +304,10 @@ public class GameScreen implements Screen {
         // fill corners
         for (int i = 0; i < moveDistance; i++) {
             for (int j = moveDistance - 1; j > 0; j--) {
-                Button button = new MoveTile().getButton();
-                Button button2 = new MoveTile().getButton();
-                Button button3 = new MoveTile().getButton();
-                Button button4 = new MoveTile().getButton();
+                Button button = new MoveTile(cam).getButton();
+                Button button2 = new MoveTile(cam).getButton();
+                Button button3 = new MoveTile(cam).getButton();
+                Button button4 = new MoveTile(cam).getButton();
 
                 if(i == 0 || j == 0 || (i + j) > moveDistance){
                     button = null;

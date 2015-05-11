@@ -1,0 +1,44 @@
+# Data for all the maps
+# id: Must be unique
+# title: Title for the area
+# count: How many buttons there are
+# button: If there are buttons, then for format follows: ID XPOS YPOS NAME
+# hasNoBack NO ":" if hasNoBack, there will be no back button
+# backid: put if "hasNoBack" is NOT used. This is the ID that the back button will take you
+# end NO ":" end of map
+
+# Initial map
+id: 1
+title: Main Campus
+count: 4
+button: 10 480 280 Main Building
+button: 15 180 400 Training
+button: 20 120 120 Dorms
+button: 25 820 320 Classrooms
+hasNoBack
+end
+
+
+id: 10
+title: Main Building
+count: 0
+backid: 1
+end
+
+id: 15
+title: Training
+count: 0
+backid: 1
+end
+
+id: 20
+title: Dorms
+count: 0
+backid: 1
+end
+
+id: 25
+title: Classrooms
+count: 0
+backid: 1
+end

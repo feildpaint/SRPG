@@ -4,13 +4,14 @@ package com.ash.srpg.characters;
 public enum ArmorType {
 
     //<editor-fold desc="Types">
-    LIGHTCLOTH      ("Light Cloth",    50,  6,  2,  4,  4,  2, 40),
-    HEAVYCLOTH      ("Heavy Cloth",    30, 10,  6,  6,  6,  4, 30),
-    HIDELEATHER     ("Hide Leather",   45, 12, 10, 10, 10, 14, 12),
-    STUDDEDLEATHER  ("Studded Leather",40, 14, 12, 14, 14, 16,  8),
-    CHAINMAIL       ("Chainmail",      28, 14, 16,  8,  8, 16, -4),
-    SCALEMAIL       ("Scalemail",      22, 18, 18, 12, 12, 18,-12),
-    PLATEMAIL       ("Platemail",      10, 24, 20, 10, 10, 20,-20);
+    /*00*/ LIGHTCLOTH      ("Light Cloth",    50,  6,  2,  4,  4,  2, 40),
+    /*01*/ HEAVYCLOTH      ("Heavy Cloth",    30, 10,  6,  6,  6,  4, 30),
+    /*02*/ HIDELEATHER     ("Hide Leather",   45, 12, 10, 10, 10, 14, 12),
+    /*03*/ STUDDEDLEATHER  ("Studded Leather",40, 14, 12, 14, 14, 16,  8),
+    /*04*/ CHAINMAIL       ("Chainmail",      28, 14, 16,  8,  8, 16, -4),
+    /*05*/ SCALEMAIL       ("Scalemail",      22, 18, 18, 12, 12, 18,-12),
+    /*06*/ PLATEMAIL       ("Platemail",      10, 24, 20, 10, 10, 20,-20),
+    /*07*/ OTHER           ("Other",           0,  0,  0,  0,  0,  0,  0);
     //</editor-fold>
 
     private String name;
